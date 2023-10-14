@@ -4,9 +4,8 @@ import styles from './styles';
 import {IImageViewProps} from '../elementTypes';
 import Colors from '../../../utils/colors/Colors';
 
-const ImageView: React.FunctionComponent<IImageViewProps> = ({
+const ImageView: React.FC<IImageViewProps> = ({
   style,
-  source,
   onLoadEnd,
   ...restProps
 }) => {
@@ -21,7 +20,6 @@ const ImageView: React.FunctionComponent<IImageViewProps> = ({
     <React.Fragment>
       <Image
         style={[styles.image, style]}
-        source={source}
         onLoadEnd={onLoadEndHandler}
         {...restProps}
       />
