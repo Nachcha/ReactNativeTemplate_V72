@@ -1,0 +1,18 @@
+{
+    "en_us": {
+        "name": "English (US)",
+        "nativeName": "English (US)"
+    },
+    "en_uk": {
+        "name": "English (UK)",
+        "nativeName": "English (UK)"
+    },
+    "ja": {
+        "name": "Japanese",
+        "nativeName": "日本語"
+    },
+    "sinhala": {
+        "name": "Sinhala",
+        "nativeName": "සිංහල"
+    }
+}
