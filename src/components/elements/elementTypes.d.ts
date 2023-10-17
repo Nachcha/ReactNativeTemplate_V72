@@ -1,4 +1,4 @@
-import {ImageProps, ImageSourcePropType} from 'react-native';
+import {ImageProps, ImageSourcePropType, TextProps} from 'react-native';
 
 export interface IImageViewProps extends ImageProps {
   /**
@@ -6,3 +6,5 @@ export interface IImageViewProps extends ImageProps {
    */
   placeholder?: ImageSourcePropType;
 }
+
+export interface IDescriptionTextProps extends TextProps {}
