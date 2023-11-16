@@ -6,7 +6,7 @@ const initialState: AuthStateType = {
   error: null,
 };
 
-const AuthReducer = (
+const authReducer = (
   state: AuthStateType = initialState,
   action: AuthActionType,
 ) => {
@@ -54,4 +54,4 @@ const AuthReducer = (
   }
 };
 
-export default AuthReducer;
+export default authReducer;

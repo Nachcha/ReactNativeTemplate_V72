@@ -1,4 +1,4 @@
-import {StyleSheet} from 'react-native/Libraries/StyleSheet/StyleSheet';
+import {StyleSheet} from 'react-native';
 
 const styles = StyleSheet.create({
   input: {},
