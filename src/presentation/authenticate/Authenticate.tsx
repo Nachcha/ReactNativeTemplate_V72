@@ -16,7 +16,7 @@ const HeaderBackButton: React.FC = () => {
         alignItems: 'center',
         justifyContent: 'center',
       }}>
-      <Text>Bk</Text>
+      <Icon name="close" size={30} color="#900" />
     </TouchableOpacity>
   );
 };
@@ -41,6 +41,8 @@ const Authenticate: React.FC = () => {
     <ScreenWithFooterAndHeader
       header={
         <Header topic="Header One" leftButton={<HeaderBackButton />}>
+          <HeaderRightButton />
+          <HeaderRightButton />
           <HeaderRightButton />
           <HeaderRightButton />
         </Header>
