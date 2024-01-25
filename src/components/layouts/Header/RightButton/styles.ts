@@ -2,11 +2,11 @@ import {StyleSheet} from 'react-native';
 
 const styles = StyleSheet.create({
   container: {
-    width: '100%',
-    backgroundColor: '#dfe',
-    flexDirection: 'column-reverse',
+    width: 40,
+    height: 40,
     alignItems: 'center',
     justifyContent: 'center',
+    marginLeft: 5,
   },
 });
 

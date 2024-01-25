@@ -1,7 +1,7 @@
-import {StyleSheet, View} from 'react-native';
-import React, {PropsWithChildren} from 'react';
-
-interface IFooterActionsContainerProps extends PropsWithChildren {}
+import {View} from 'react-native';
+import React from 'react';
+import {IFooterActionsContainerProps} from '../layouts';
+import styles from './styles';
 
 const FooterActionsContainer: React.FC<IFooterActionsContainerProps> = ({
   children,
@@ -10,13 +10,3 @@ const FooterActionsContainer: React.FC<IFooterActionsContainerProps> = ({
 };
 
 export default FooterActionsContainer;
-
-const styles = StyleSheet.create({
-  container: {
-    width: '100%',
-    backgroundColor: '#dfe',
-    flexDirection: 'column-reverse',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});

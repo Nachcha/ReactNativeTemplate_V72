@@ -9,12 +9,15 @@ const LoginForm = () => {
   return (
     <View>
       <Text>LoginForm</Text>
+      <Text>Name</Text>
       <InputText
         value={formState.formData.email}
         onChangeText={text => {
           handleFormState({value: text, field: 'email', type: 'change'});
         }}
+        secureTextEntry={false}
       />
+      <Text>Password</Text>
       <InputText
         value={formState.formData.password}
         onChangeText={text => {

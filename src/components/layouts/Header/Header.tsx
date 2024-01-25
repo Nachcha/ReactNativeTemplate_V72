@@ -1,25 +1,7 @@
-import {Text, TextStyle, View, ViewStyle} from 'react-native';
-import React, {PropsWithChildren} from 'react';
+import {Text, View} from 'react-native';
+import React from 'react';
 import styles from './styles';
-
-interface IHeaderProps extends PropsWithChildren {
-  /**
-   * Styles for container
-   */
-  containerStyle?: ViewStyle;
-  /**
-   * JSX Element for left button
-   */
-  leftButton?: JSX.Element;
-  /**
-   * Topic of the header
-   */
-  topic: string;
-  /**
-   * Styles for topic
-   */
-  topicStyle?: TextStyle;
-}
+import {IHeaderProps} from '../layouts';
 
 const Header: React.FC<IHeaderProps> = ({
   children,

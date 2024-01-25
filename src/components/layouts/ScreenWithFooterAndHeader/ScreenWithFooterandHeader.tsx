@@ -1,25 +1,7 @@
-import {View, SafeAreaView, ViewStyle} from 'react-native';
-import React, {PropsWithChildren} from 'react';
+import {View, SafeAreaView} from 'react-native';
+import React from 'react';
 import styles from './styles';
-
-interface IScreenWithFooterAndHeaderProps extends PropsWithChildren {
-  /**
-   * JSX Element for header
-   */
-  header?: JSX.Element;
-  /**
-   * JSX Element for footer
-   */
-  footer?: JSX.Element;
-  /**
-   * Additional styles for outter container
-   */
-  style?: ViewStyle;
-  /**
-   * Additional styles for inner container
-   */
-  innerStyle?: ViewStyle;
-}
+import {IScreenWithFooterAndHeaderProps} from '../layouts';
 
 const ScreenWithFooterAndHeader: React.FC<IScreenWithFooterAndHeaderProps> = ({
   header,

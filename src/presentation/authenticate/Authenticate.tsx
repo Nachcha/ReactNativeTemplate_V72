@@ -1,50 +1,21 @@
-import {Text, TouchableOpacity} from 'react-native';
+import {Text} from 'react-native';
 import React from 'react';
 import ScreenWithFooterAndHeader from '../../components/layouts/ScreenWithFooterAndHeader/ScreenWithFooterandHeader';
 import LoginForm from './LoginForm/LoginForm';
-import Header from '../../components/elements/Header/Header';
+import Header from '../../components/layouts/Header/Header';
 import FooterActionsContainer from '../../components/layouts/FooterActionsContainer/FooterActionsContainer';
 import styles from './styles';
-import Icon from 'react-native-vector-icons/FontAwesome';
-
-const HeaderBackButton: React.FC = () => {
-  return (
-    <TouchableOpacity
-      style={{
-        width: '100%',
-        height: '100%',
-        alignItems: 'center',
-        justifyContent: 'center',
-      }}>
-      <Icon name="close" size={30} color="#9df" />
-    </TouchableOpacity>
-  );
-};
-
-const HeaderRightButton: React.FC = () => {
-  return (
-    <TouchableOpacity
-      style={{
-        width: 40,
-        height: 40,
-        alignItems: 'center',
-        justifyContent: 'center',
-        marginLeft: 5,
-      }}>
-      <Icon name="rocket" size={30} color="#9c1" />
-    </TouchableOpacity>
-  );
-};
+import LeftButton from '../../components/layouts/Header/LeftButton/LeftButton';
+import RightButton from '../../components/layouts/Header/RightButton/RightButton';
 
 const Authenticate: React.FC = () => {
   return (
     <ScreenWithFooterAndHeader
       header={
-        <Header topic="Header One" leftButton={<HeaderBackButton />}>
-          <HeaderRightButton />
-          <HeaderRightButton />
-          <HeaderRightButton />
-          <HeaderRightButton />
+        <Header topic="Header One" leftButton={<LeftButton />}>
+          <RightButton />
+          <RightButton />
+          <RightButton />
         </Header>
       }
       footer={
