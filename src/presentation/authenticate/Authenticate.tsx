@@ -16,7 +16,7 @@ const HeaderBackButton: React.FC = () => {
         alignItems: 'center',
         justifyContent: 'center',
       }}>
-      <Icon name="close" size={30} color="#900" />
+      <Icon name="close" size={30} color="#9df" />
     </TouchableOpacity>
   );
 };
@@ -31,7 +31,7 @@ const HeaderRightButton: React.FC = () => {
         justifyContent: 'center',
         marginLeft: 5,
       }}>
-      <Icon name="rocket" size={30} color="#900" />
+      <Icon name="rocket" size={30} color="#9c1" />
     </TouchableOpacity>
   );
 };
@@ -51,6 +51,7 @@ const Authenticate: React.FC = () => {
         <FooterActionsContainer>
           <Text>Footer 1</Text>
           <Text>Footer 2</Text>
+          <Text>Footer 3</Text>
         </FooterActionsContainer>
       }
       style={styles.screen}
