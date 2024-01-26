@@ -2,15 +2,26 @@ import {useReducer} from 'react';
 
 const initialState = {
   formData: {
+    username: '',
     email: '',
     password: '',
+    confirmPassword: '',
   },
   formValidation: {
+    username: {
+      isValid: true,
+      comment: '',
+    },
     email: {
       isValid: true,
       comment: '',
     },
     password: {
+      isValid: true,
+      isSecured: true,
+      comment: '',
+    },
+    confirmPassword: {
       isValid: true,
       isSecured: true,
       comment: '',
@@ -23,7 +34,7 @@ type ValidatorFormType = typeof initialState;
 
 interface IAction {
   value: string;
-  field: 'email' | 'password';
+  field: 'username' | 'email' | 'password' | 'confirmPassword';
   type: 'change' | 'blur' | 'focus' | 'submit';
 }
 
@@ -57,10 +68,16 @@ const validateOnChange = (
 ): ValidatorFormType => {
   state.formData[field] = value;
   switch (field) {
+    case 'username':
+      return state;
+
     case 'email':
       return state;
 
     case 'password':
+      return state;
+
+    case 'confirmPassword':
       return state;
 
     default:
@@ -74,10 +91,16 @@ const validateOnBlur = (
   field: IAction['field'],
 ): ValidatorFormType => {
   switch (field) {
+    case 'username':
+      return state;
+
     case 'email':
       return state;
 
     case 'password':
+      return state;
+
+    case 'confirmPassword':
       return state;
 
     default:
