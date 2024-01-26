@@ -1,4 +1,9 @@
-import {ImageProps, ImageSourcePropType, TextProps} from 'react-native';
+import {
+  ImageProps,
+  ImageSourcePropType,
+  TextProps,
+  TouchableOpacityProps,
+} from 'react-native';
 
 export interface IImageViewProps extends ImageProps {
   /**
@@ -8,3 +13,22 @@ export interface IImageViewProps extends ImageProps {
 }
 
 export interface IDescriptionTextProps extends TextProps {}
+
+export interface IButtonPrimaryProps extends TouchableOpacityProps {
+  /**
+   * button text
+   */
+  label?: string;
+  /**
+   * button container style
+   */
+  style?: ViewStyle;
+  /**
+   * button text style
+   */
+  textStyle?: TextStyle;
+  /**
+   * button fill type
+   */
+  fill?: boolean;
+}

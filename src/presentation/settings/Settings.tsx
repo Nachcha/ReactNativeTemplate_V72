@@ -1,14 +1,13 @@
 import {Text} from 'react-native';
 import React from 'react';
 import ScreenWithFooterAndHeader from '../../components/layouts/ScreenWithFooterAndHeader/ScreenWithFooterandHeader';
-import LoginForm from './LoginForm/LoginForm';
 import Header from '../../components/layouts/Header/Header';
-import FooterActionsContainer from '../../components/layouts/FooterActionsContainer/FooterActionsContainer';
-import styles from './styles';
 import LeftButton from '../../components/layouts/Header/LeftButton/LeftButton';
 import RightButton from '../../components/layouts/Header/RightButton/RightButton';
+import FooterActionsContainer from '../../components/layouts/FooterActionsContainer/FooterActionsContainer';
+import styles from './styles';
 
-const Authenticate: React.FC = () => {
+const Settings: React.FC = () => {
   return (
     <ScreenWithFooterAndHeader
       header={
@@ -22,14 +21,13 @@ const Authenticate: React.FC = () => {
         <FooterActionsContainer>
           <Text>Footer 1</Text>
           <Text>Footer 2</Text>
-          <Text>Footer 3</Text>
         </FooterActionsContainer>
       }
       style={styles.screen}
       innerStyle={styles.window}>
-      <LoginForm />
+      <Text>Settings</Text>
     </ScreenWithFooterAndHeader>
   );
 };
 
-export default Authenticate;
+export default Settings;

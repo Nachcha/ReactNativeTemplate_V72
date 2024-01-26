@@ -55,3 +55,30 @@ export interface IScreenWithFooterAndHeaderProps extends PropsWithChildren {
 }
 
 export interface IFooterActionsContainerProps extends PropsWithChildren {}
+
+export interface IAuthScreenLayout {
+  /**
+   * JSX Element for header
+   */
+  header: JSX.Element;
+  /**
+   * JSX Element for footer
+   */
+  footer: JSX.Element;
+  /**
+   * Additional styles
+   */
+  style?: ViewStyle;
+  /**
+   * Additional styles for header container
+   */
+  headerContainerStyle?: ViewStyle;
+  /**
+   * Additional styles for footer container
+   */
+  footerContainerStyle?: ViewStyle;
+  /**
+   * Additional styles for inner container
+   */
+  innerContainerStyle?: ViewStyle;
+}

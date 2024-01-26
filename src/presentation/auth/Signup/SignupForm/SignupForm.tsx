@@ -1,0 +1,94 @@
+import {Keyboard, View} from 'react-native';
+import React, {useEffect, useState} from 'react';
+import InputText from '../../../../components/inputs/InputText/InputText';
+import useFormState from './useFormState';
+import ButtonPrimary from '../../../../components/elements/ButtonPrimary/ButtonPrimary';
+import styles from './styles';
+import {useNavigation} from '@react-navigation/native';
+import IconFA from 'react-native-vector-icons/FontAwesome';
+import IconF from 'react-native-vector-icons/Feather';
+
+const SignupForm: React.FC = () => {
+  const {formState, handleFormState} = useFormState();
+  const navigation = useNavigation();
+  const [keyboardStatus, setKeyboardStatus] = useState<Boolean>(false);
+
+  useEffect(() => {
+    const showSubscription = Keyboard.addListener('keyboardDidShow', () => {
+      setKeyboardStatus(true);
+    });
+    const hideSubscription = Keyboard.addListener('keyboardDidHide', () => {
+      setKeyboardStatus(false);
+    });
+
+    return () => {
+      showSubscription.remove();
+      hideSubscription.remove();
+    };
+  }, []);
+
+  return (
+    <View style={styles.footerContainer}>
+      <InputText
+        label="Username"
+        placeholder="Enter your username"
+        value={formState.formData.email}
+        onChangeText={text => {
+          handleFormState({value: text, field: 'email', type: 'change'});
+        }}
+        secureTextEntry={false}
+        iconLeft={<IconFA name={'user-o'} size={24} color="gray" />}
+      />
+      <InputText
+        label="Email"
+        placeholder="Enter your username"
+        value={formState.formData.email}
+        onChangeText={text => {
+          handleFormState({value: text, field: 'email', type: 'change'});
+        }}
+        secureTextEntry={false}
+        iconLeft={<IconFA name={'user-o'} size={24} color="gray" />}
+      />
+      <InputText
+        label="Password"
+        placeholder="Enter your password"
+        value={formState.formData.password}
+        onChangeText={text => {
+          handleFormState({value: text, field: 'password', type: 'change'});
+        }}
+        iconLeft={<IconF name={'lock'} size={24} color="gray" />}
+        secureTextEntry={formState.formValidation.password.isSecured}
+      />
+      <InputText
+        label="Confirm Password"
+        placeholder="Repete your password"
+        value={formState.formData.password}
+        onChangeText={text => {
+          handleFormState({value: text, field: 'password', type: 'change'});
+        }}
+        iconLeft={<IconF name={'lock'} size={24} color="gray" />}
+        secureTextEntry={formState.formValidation.password.isSecured}
+      />
+      {!keyboardStatus && (
+        <>
+          <ButtonPrimary
+            onPress={() => {}}
+            label="Signup"
+            fill={true}
+            style={styles.buttonContainer}
+          />
+          <ButtonPrimary
+            onPress={() => {
+              navigation.navigate('Login' as never);
+            }}
+            label="Login"
+            fill={false}
+            style={styles.buttonContainer}
+          />
+        </>
+      )}
+    </View>
+  );
+};
+
+export default SignupForm;
