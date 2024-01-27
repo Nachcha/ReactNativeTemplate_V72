@@ -2,5 +2,19 @@
     "welcome": "Welcome",
     "learn-more": "Learn More",
     "welcome-discription": "Welcome to the REact Native Template.",
-    "learn-more-discription": "This is a template for React Native projects us."
+    "learn-more-discription": "This is a template for React Native projects us.",
+    "welcome-to-react-native-73-template": "Welcome to React Native 73 Template",
+    "get-started": "Get Started",
+    "login-here": "Login Here!",
+    "email": "Email",
+    "enter-your-email": "Enter your email",
+    "password": "Password",
+    "enter-your-password": "Enter your password",
+    "login": "Login",
+    "signup": "Signup",
+    "register-now": "Register Now!",
+    "username": "Username",
+    "enter-your-username": "Enter your username",
+    "confirm-password": "Confirm Password",
+    "re-enter-your-password": "Re-enter your password"
 }

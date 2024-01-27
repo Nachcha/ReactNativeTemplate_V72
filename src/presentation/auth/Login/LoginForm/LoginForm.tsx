@@ -9,16 +9,18 @@ import IconFA from 'react-native-vector-icons/FontAwesome';
 import IconF from 'react-native-vector-icons/Feather';
 import {getScaleNumber} from '../../../../utils/dimentions/refDimentions';
 import Colors from '../../../../utils/colors/Colors';
+import {useTranslation} from 'react-i18next';
 
 const LoginForm = () => {
   const {formState, handleFormState} = useFormState();
   const navigation = useNavigation();
+  const {t} = useTranslation();
 
   return (
     <View style={styles.footerContainer}>
       <InputText
-        label="Email"
-        placeholder="Enter your username"
+        label={t('email')}
+        placeholder={t('enter-your-email')}
         value={formState.formData.email}
         onChangeText={text => {
           handleFormState({value: text, field: 'email', type: 'change'});
@@ -35,8 +37,8 @@ const LoginForm = () => {
         }
       />
       <InputText
-        label="Password"
-        placeholder="Enter your password"
+        label={t('password')}
+        placeholder={t('enter-your-password')}
         value={formState.formData.password}
         onChangeText={text => {
           handleFormState({value: text, field: 'password', type: 'change'});
@@ -54,7 +56,7 @@ const LoginForm = () => {
       />
       <ButtonPrimary
         onPress={() => {}}
-        label="Login"
+        label={t('login')}
         fill={true}
         style={styles.buttonContainer}
       />
@@ -62,7 +64,7 @@ const LoginForm = () => {
         onPress={() => {
           navigation.navigate('Signup' as never);
         }}
-        label="Signup"
+        label={t('signup')}
         fill={false}
         style={styles.buttonContainer}
       />

@@ -2,8 +2,10 @@ import {Image, Text, View} from 'react-native';
 import React from 'react';
 import styles from './styles';
 import Images from '../../../../assets/images/Images';
+import {useTranslation} from 'react-i18next';
 
 const Header: React.FC = () => {
+  const {t} = useTranslation();
   return (
     <View style={styles.container}>
       <View style={styles.imageContainer}>
@@ -13,7 +15,7 @@ const Header: React.FC = () => {
           resizeMode="contain"
         />
       </View>
-      <Text style={styles.label}>Login here!</Text>
+      <Text style={styles.label}>{t('login-here')}</Text>
     </View>
   );
 };

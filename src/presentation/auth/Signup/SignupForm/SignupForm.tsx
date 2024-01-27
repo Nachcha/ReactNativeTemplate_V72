@@ -9,11 +9,13 @@ import IconFA from 'react-native-vector-icons/FontAwesome';
 import IconF from 'react-native-vector-icons/Feather';
 import {getScaleNumber} from '../../../../utils/dimentions/refDimentions';
 import Colors from '../../../../utils/colors/Colors';
+import {useTranslation} from 'react-i18next';
 
 const SignupForm: React.FC = () => {
   const {formState, handleFormState} = useFormState();
   const navigation = useNavigation();
   const [keyboardStatus, setKeyboardStatus] = useState<Boolean>(false);
+  const {t} = useTranslation();
 
   useEffect(() => {
     const showSubscription = Keyboard.addListener('keyboardDidShow', () => {
@@ -32,8 +34,8 @@ const SignupForm: React.FC = () => {
   return (
     <View style={styles.footerContainer}>
       <InputText
-        label="Username"
-        placeholder="Enter your username"
+        label={t('username')}
+        placeholder={t('enter-your-username')}
         value={formState.formData.username}
         onChangeText={text => {
           handleFormState({value: text, field: 'username', type: 'change'});
@@ -50,8 +52,8 @@ const SignupForm: React.FC = () => {
         }
       />
       <InputText
-        label="Email"
-        placeholder="Enter your username"
+        label={t('email')}
+        placeholder={t('enter-your-email')}
         value={formState.formData.email}
         onChangeText={text => {
           handleFormState({value: text, field: 'email', type: 'change'});
@@ -68,8 +70,8 @@ const SignupForm: React.FC = () => {
         }
       />
       <InputText
-        label="Password"
-        placeholder="Enter your password"
+        label={t('password')}
+        placeholder={t('enter-your-password')}
         value={formState.formData.password}
         onChangeText={text => {
           handleFormState({value: text, field: 'password', type: 'change'});
@@ -86,8 +88,8 @@ const SignupForm: React.FC = () => {
         secureTextEntry={formState.formValidation.password.isSecured}
       />
       <InputText
-        label="Confirm Password"
-        placeholder="Repete your password"
+        label={t('confirm-password')}
+        placeholder={t('re-enter-your-password')}
         value={formState.formData.confirmPassword}
         onChangeText={text => {
           handleFormState({
@@ -111,7 +113,7 @@ const SignupForm: React.FC = () => {
         <>
           <ButtonPrimary
             onPress={() => {}}
-            label="Signup"
+            label={t('signup')}
             fill={true}
             style={styles.buttonContainer}
           />
@@ -119,7 +121,7 @@ const SignupForm: React.FC = () => {
             onPress={() => {
               navigation.navigate('Login' as never);
             }}
-            label="Login"
+            label={t('login')}
             fill={false}
             style={styles.buttonContainer}
           />

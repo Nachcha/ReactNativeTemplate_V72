@@ -3,13 +3,15 @@ import React from 'react';
 import styles from './styles';
 import ButtonPrimary from '../../../../components/elements/ButtonPrimary/ButtonPrimary';
 import {useNavigation} from '@react-navigation/native';
+import {useTranslation} from 'react-i18next';
 
 const Footer: React.FC = () => {
   const navigation = useNavigation();
+  const {t} = useTranslation();
   return (
     <View style={styles.container}>
       <Text style={styles.topicText}>
-        {'Welcome to\nReactNative-73\nTemplate'}
+        {t('welcome-to-react-native-73-template')}
       </Text>
       <View style={styles.buttonContainer}>
         <ButtonPrimary
@@ -17,7 +19,7 @@ const Footer: React.FC = () => {
             navigation.navigate('Login' as never);
           }}
           style={styles.button}
-          label={'Get Started'}
+          label={t('get-started')}
           fill={false}
         />
       </View>

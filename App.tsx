@@ -12,7 +12,7 @@ import {SafeAreaProvider} from 'react-native-safe-area-context';
 
 function App(): JSX.Element {
   useEffect(() => {
-    i18next.changeLanguage('en_uk');
+    i18next.changeLanguage('sinhala');
   }, []);
 
   return (

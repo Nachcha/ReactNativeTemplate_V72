@@ -2,5 +2,19 @@
     "welcome": "සාදරයෙන් පිළිගනිමු",
     "learn-more": "තවත් හදාරන්න",
     "welcome-discription": "REact Native සැකිල්ල වෙත සාදරයෙන් පිළිගනිමු.",
-    "learn-more-discription": "මෙය React Native ව්‍යාපෘති සඳහා වන අච්චුවකි."
+    "learn-more-discription": "මෙය React Native ව්‍යාපෘති සඳහා වන අච්චුවකි.",
+    "welcome-to-react-native-73-template": "React Native 73 සැකිල්ල වෙත සාදරයෙන් පිළිගනිමු",
+    "get-started": "ආරම්භ කරන්න",
+    "login-here": "මෙතනින් ලොග් වෙන්න!",
+    "email": "විද්යුත් තැපෑල",
+    "enter-your-email": "ඔබගේ විද්‍යුත් තැපෑල ඇතුලත් කරන්න",
+    "password": "මුරපදය",
+    "enter-your-password": "ඔබගේ මුරපදය ඇතුලත් කරන්න",
+    "login": "ඇතුල් වන්න",
+    "signup": "ලියාපදිංචි වන්න",
+    "register-now": "දැන්ම ලියාපදිංචි වන්න!",
+    "username": "පරිශීලක නාමය",
+    "enter-your-username": "ඔබගේ පරිශීලක නාමය ඇතුලත් කරන්න",
+    "confirm-password": "මුරපදය තහවුරු කරන්න",
+    "re-enter-your-password": "ඔබගේ මුරපදය නැවත ඇතුල් කරන්න"
 }
