@@ -49,24 +49,8 @@ const InputText: React.FC<IInputTextProps> = ({
         )}
       </View>
       {!isValid && (
-        <View
-          style={{
-            position: 'absolute',
-            left: 10,
-            bottom: -10,
-            borderRadius: 2,
-            backgroundColor: Colors.nonary,
-          }}>
-          <Text
-            style={{
-              color: Colors.black,
-              fontSize: 12,
-              fontWeight: 'normal',
-              marginHorizontal: 3,
-              marginVertical: 1,
-            }}>
-            {errorText || 'Error'}
-          </Text>
+        <View style={styles.errorContainer}>
+          <Text style={styles.comment}>{errorText || 'Error'}</Text>
         </View>
       )}
     </View>

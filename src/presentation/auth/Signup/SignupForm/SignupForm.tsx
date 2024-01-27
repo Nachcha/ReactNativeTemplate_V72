@@ -7,6 +7,8 @@ import styles from './styles';
 import {useNavigation} from '@react-navigation/native';
 import IconFA from 'react-native-vector-icons/FontAwesome';
 import IconF from 'react-native-vector-icons/Feather';
+import {getScaleNumber} from '../../../../utils/dimentions/refDimentions';
+import Colors from '../../../../utils/colors/Colors';
 
 const SignupForm: React.FC = () => {
   const {formState, handleFormState} = useFormState();
@@ -32,12 +34,20 @@ const SignupForm: React.FC = () => {
       <InputText
         label="Username"
         placeholder="Enter your username"
-        value={formState.formData.email}
+        value={formState.formData.username}
         onChangeText={text => {
-          handleFormState({value: text, field: 'email', type: 'change'});
+          handleFormState({value: text, field: 'username', type: 'change'});
         }}
+        isValid={formState.formValidation.username.isValid}
+        errorText={formState.formValidation.username.comment}
         secureTextEntry={false}
-        iconLeft={<IconFA name={'user-o'} size={24} color="gray" />}
+        iconLeft={
+          <IconFA
+            name={'user-o'}
+            size={getScaleNumber(24)}
+            color={Colors.senary}
+          />
+        }
       />
       <InputText
         label="Email"
@@ -46,8 +56,16 @@ const SignupForm: React.FC = () => {
         onChangeText={text => {
           handleFormState({value: text, field: 'email', type: 'change'});
         }}
+        isValid={formState.formValidation.email.isValid}
+        errorText={formState.formValidation.email.comment}
         secureTextEntry={false}
-        iconLeft={<IconFA name={'user-o'} size={24} color="gray" />}
+        iconLeft={
+          <IconFA
+            name={'envelope-o'}
+            size={getScaleNumber(24)}
+            color={Colors.senary}
+          />
+        }
       />
       <InputText
         label="Password"
@@ -56,17 +74,37 @@ const SignupForm: React.FC = () => {
         onChangeText={text => {
           handleFormState({value: text, field: 'password', type: 'change'});
         }}
-        iconLeft={<IconF name={'lock'} size={24} color="gray" />}
+        isValid={formState.formValidation.password.isValid}
+        errorText={formState.formValidation.password.comment}
+        iconLeft={
+          <IconF
+            name={'lock'}
+            size={getScaleNumber(24)}
+            color={Colors.senary}
+          />
+        }
         secureTextEntry={formState.formValidation.password.isSecured}
       />
       <InputText
         label="Confirm Password"
         placeholder="Repete your password"
-        value={formState.formData.password}
+        value={formState.formData.confirmPassword}
         onChangeText={text => {
-          handleFormState({value: text, field: 'password', type: 'change'});
+          handleFormState({
+            value: text,
+            field: 'confirmPassword',
+            type: 'change',
+          });
         }}
-        iconLeft={<IconF name={'lock'} size={24} color="gray" />}
+        isValid={formState.formValidation.confirmPassword.isValid}
+        errorText={formState.formValidation.confirmPassword.comment}
+        iconLeft={
+          <IconF
+            name={'lock'}
+            size={getScaleNumber(24)}
+            color={Colors.senary}
+          />
+        }
         secureTextEntry={formState.formValidation.password.isSecured}
       />
       {!keyboardStatus && (

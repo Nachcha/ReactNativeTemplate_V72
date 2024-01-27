@@ -31,6 +31,20 @@ const styles = StyleSheet.create({
   iconContainer: {
     padding: getScaleNumber(5),
   },
+  errorContainer: {
+    position: 'absolute',
+    left: getScaleNumber(10),
+    bottom: getScaleNumber(-10),
+    borderRadius: getScaleNumber(2),
+    backgroundColor: Colors.nonary,
+  },
+  comment: {
+    color: Colors.black,
+    fontSize: getScaleNumber(12),
+    fontWeight: 'normal',
+    marginHorizontal: getScaleNumber(3),
+    marginVertical: getScaleNumber(1),
+  },
 });
 
 export default styles;

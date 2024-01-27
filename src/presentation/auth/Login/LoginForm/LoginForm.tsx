@@ -7,6 +7,8 @@ import styles from './styles';
 import {useNavigation} from '@react-navigation/native';
 import IconFA from 'react-native-vector-icons/FontAwesome';
 import IconF from 'react-native-vector-icons/Feather';
+import {getScaleNumber} from '../../../../utils/dimentions/refDimentions';
+import Colors from '../../../../utils/colors/Colors';
 
 const LoginForm = () => {
   const {formState, handleFormState} = useFormState();
@@ -24,7 +26,13 @@ const LoginForm = () => {
         secureTextEntry={false}
         isValid={formState.formValidation.email.isValid}
         errorText={formState.formValidation.email.comment}
-        iconLeft={<IconFA name={'user-o'} size={24} color="gray" />}
+        iconLeft={
+          <IconFA
+            name={'envelope-o'}
+            size={getScaleNumber(24)}
+            color={Colors.senary}
+          />
+        }
       />
       <InputText
         label="Password"
@@ -35,7 +43,13 @@ const LoginForm = () => {
         }}
         isValid={formState.formValidation.password.isValid}
         errorText={formState.formValidation.password.comment}
-        iconLeft={<IconF name={'lock'} size={24} color="gray" />}
+        iconLeft={
+          <IconF
+            name={'lock'}
+            size={getScaleNumber(24)}
+            color={Colors.senary}
+          />
+        }
         secureTextEntry={formState.formValidation.password.isSecured}
       />
       <ButtonPrimary
