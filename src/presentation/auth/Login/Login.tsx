@@ -1,12 +1,10 @@
 import React from 'react';
 import AuthScreenLayout from '../../../components/layouts/AuthScreenLayout/AuthScreenLayout';
 import LoginForm from './LoginForm/LoginForm';
-import {Text} from 'react-native';
+import Header from './Header/Header';
 
 const Login: React.FC = () => {
-  return (
-    <AuthScreenLayout header={<Text>Login here</Text>} footer={<LoginForm />} />
-  );
+  return <AuthScreenLayout header={<Header />} footer={<LoginForm />} />;
 };
 
 export default Login;

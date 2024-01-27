@@ -15,13 +15,15 @@ const LoginForm = () => {
   return (
     <View style={styles.footerContainer}>
       <InputText
-        label="Username"
+        label="Email"
         placeholder="Enter your username"
         value={formState.formData.email}
         onChangeText={text => {
           handleFormState({value: text, field: 'email', type: 'change'});
         }}
         secureTextEntry={false}
+        isValid={formState.formValidation.email.isValid}
+        errorText={formState.formValidation.email.comment}
         iconLeft={<IconFA name={'user-o'} size={24} color="gray" />}
       />
       <InputText
@@ -31,6 +33,8 @@ const LoginForm = () => {
         onChangeText={text => {
           handleFormState({value: text, field: 'password', type: 'change'});
         }}
+        isValid={formState.formValidation.password.isValid}
+        errorText={formState.formValidation.password.comment}
         iconLeft={<IconF name={'lock'} size={24} color="gray" />}
         secureTextEntry={formState.formValidation.password.isSecured}
       />

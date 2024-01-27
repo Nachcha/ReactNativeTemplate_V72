@@ -1,7 +1,8 @@
-import {View, SafeAreaView, KeyboardAvoidingView, Platform} from 'react-native';
+import {View, KeyboardAvoidingView, Platform} from 'react-native';
 import React from 'react';
 import styles from './styles';
 import {IAuthScreenLayout} from '../layouts';
+import {SafeAreaView} from 'react-native-safe-area-context';
 
 const ScreenWithFooterAndHeader: React.FC<IAuthScreenLayout> = ({
   header,

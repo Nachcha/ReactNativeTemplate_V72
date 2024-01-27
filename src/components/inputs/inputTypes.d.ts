@@ -17,6 +17,14 @@ export interface IInputTextProps extends TextInputProps {
    * placeholder of the input
    */
   placeholder?: string;
+  /**
+   * is the input valid property to show error text
+   */
+  isValid?: boolean;
+  /**
+   * content of error text
+   */
+  errorText?: string;
 }
 
 // export interface ISearchInputProps extends TextInputProps {}

@@ -21,7 +21,7 @@ const styles = StyleSheet.create({
   },
   innerContainer: {
     width: '100%',
-    padding: getScaleNumber(20),
+    paddingHorizontal: getScaleNumber(20),
     alignItems: 'center',
   },
   keyboardAvoidingView: {

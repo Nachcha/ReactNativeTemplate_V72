@@ -13,6 +13,8 @@ const InputText: React.FC<IInputTextProps> = ({
   label,
   placeholder,
   secureTextEntry,
+  isValid = true,
+  errorText,
   ...restProps
 }) => {
   const [isPasswordVisible, setIsPasswordVisible] = useState(false);
@@ -46,6 +48,27 @@ const InputText: React.FC<IInputTextProps> = ({
           </TouchableOpacity>
         )}
       </View>
+      {!isValid && (
+        <View
+          style={{
+            position: 'absolute',
+            left: 10,
+            bottom: -10,
+            borderRadius: 2,
+            backgroundColor: Colors.nonary,
+          }}>
+          <Text
+            style={{
+              color: Colors.black,
+              fontSize: 12,
+              fontWeight: 'normal',
+              marginHorizontal: 3,
+              marginVertical: 1,
+            }}>
+            {errorText || 'Error'}
+          </Text>
+        </View>
+      )}
     </View>
   );
 };
