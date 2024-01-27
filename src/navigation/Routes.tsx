@@ -1,7 +1,7 @@
 import * as React from 'react';
 import {NavigationContainer} from '@react-navigation/native';
-import AuthStack from './AuthStack';
-// import AppStack from './AppStack';
+// import AuthStack from './AuthStack';
+import AppStack from './AppStack';
 import {useEffect, useState} from 'react';
 
 export default function Index() {
@@ -14,7 +14,7 @@ export default function Index() {
 
   return (
     <NavigationContainer>
-      <AuthStack />
+      <AppStack />
     </NavigationContainer>
   );
 }

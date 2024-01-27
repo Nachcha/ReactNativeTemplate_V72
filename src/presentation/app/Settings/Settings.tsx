@@ -1,10 +1,10 @@
 import {Text} from 'react-native';
 import React from 'react';
-import ScreenWithFooterAndHeader from '../../components/layouts/ScreenWithFooterAndHeader/ScreenWithFooterandHeader';
-import Header from '../../components/layouts/Header/Header';
-import LeftButton from '../../components/layouts/Header/LeftButton/LeftButton';
-import RightButton from '../../components/layouts/Header/RightButton/RightButton';
-import FooterActionsContainer from '../../components/layouts/FooterActionsContainer/FooterActionsContainer';
+import ScreenWithFooterAndHeader from '../../../components/layouts/ScreenWithFooterAndHeader/ScreenWithFooterandHeader';
+import Header from '../../../components/layouts/Header/Header';
+import LeftButton from '../../../components/layouts/Header/LeftButton/LeftButton';
+import RightButton from '../../../components/layouts/Header/RightButton/RightButton';
+import FooterActionsContainer from '../../../components/layouts/FooterActionsContainer/FooterActionsContainer';
 import styles from './styles';
 
 const Settings: React.FC = () => {

@@ -5,6 +5,9 @@ export type AuthStackParameterList = {
 };
 
 export type AppStackParameterList = {
+  About: undefined;
+  Analytics: undefined;
+  Profile: undefined;
   Home: undefined;
   Settings: undefined;
 };
