@@ -11,3 +11,5 @@ export type AppStackParameterList = {
   Home: undefined;
   Settings: undefined;
 };
+
+export type AppStackRoute = keyof AppStackParameterList;

@@ -7,7 +7,7 @@ import styles from './styles';
 import {useNavigation} from '@react-navigation/native';
 import IconFA from 'react-native-vector-icons/FontAwesome';
 import IconF from 'react-native-vector-icons/Feather';
-import {getScaleNumber} from '../../../../utils/dimentions/refDimentions';
+import {getScaleNumber} from '../../../../utils/dimentions/RefDimentions';
 import Colors from '../../../../utils/colors/Colors';
 import {useTranslation} from 'react-i18next';
 

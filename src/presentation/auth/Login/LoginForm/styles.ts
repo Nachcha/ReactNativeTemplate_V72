@@ -1,5 +1,5 @@
 import {StyleSheet} from 'react-native';
-import {getScaleNumber} from '../../../../utils/dimentions/refDimentions';
+import {getScaleNumber} from '../../../../utils/dimentions/RefDimentions';
 
 const styles = StyleSheet.create({
   footerContainer: {width: '100%', paddingBottom: getScaleNumber(10)},

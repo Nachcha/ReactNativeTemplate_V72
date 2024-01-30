@@ -4,7 +4,7 @@ import styles from './styles';
 import {IInputTextProps} from '../inputTypes';
 import IconFA from 'react-native-vector-icons/FontAwesome';
 import Colors from '../../../utils/colors/Colors';
-import {getScaleNumber} from '../../../utils/dimentions/refDimentions';
+import {getScaleNumber} from '../../../utils/dimentions/RefDimentions';
 
 const InputText: React.FC<IInputTextProps> = ({
   style,

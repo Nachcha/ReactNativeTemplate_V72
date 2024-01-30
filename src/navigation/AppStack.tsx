@@ -11,7 +11,7 @@ import IconMI from 'react-native-vector-icons/MaterialIcons';
 import IconFT from 'react-native-vector-icons/Fontisto';
 import Colors from '../utils/colors/Colors';
 import BottomTabIcon from '../components/elements/BottomTabIcon/BottomTabIcon';
-import {getScaleNumber} from '../utils/dimentions/refDimentions';
+import {getScaleNumber} from '../utils/dimentions/RefDimentions';
 
 const Tab = createBottomTabNavigator<AppStackParameterList>();
 

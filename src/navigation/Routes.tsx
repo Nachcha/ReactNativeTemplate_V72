@@ -1,8 +1,9 @@
 import * as React from 'react';
 import {NavigationContainer} from '@react-navigation/native';
 // import AuthStack from './AuthStack';
-import AppStack from './AppStack';
+// import AppStack from './AppStack';
 import {useEffect, useState} from 'react';
+import BottomTabs from './BottomTabs';
 
 export default function Index() {
   const [isAuthenticated, setIsAuthenticated] = useState<Boolean>(false);
@@ -14,7 +15,7 @@ export default function Index() {
 
   return (
     <NavigationContainer>
-      <AppStack />
+      <BottomTabs />
     </NavigationContainer>
   );
 }
