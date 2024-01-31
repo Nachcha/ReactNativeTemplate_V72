@@ -7,6 +7,7 @@ export type IconTypes =
   | 'Feather'
   | 'FontAwesome'
   | 'FontAwesome5'
+  | 'Fontisto'
   | 'Foundation'
   | 'Ionicons'
   | 'MaterialCommunityIcons'
@@ -15,7 +16,7 @@ export type IconTypes =
   | 'SimpleLineIcons'
   | 'Zocial';
 
-export type IconLibrary = {
+export type IconLibraryType = {
   [key in IconType]: () => React.ComponentType<any>;
 };
 

@@ -5,16 +5,18 @@ import useFormState from './useFormState';
 import ButtonPrimary from '../../../../components/elements/ButtonPrimary/ButtonPrimary';
 import styles from './styles';
 import {useNavigation} from '@react-navigation/native';
-import IconFA from 'react-native-vector-icons/FontAwesome';
-import IconF from 'react-native-vector-icons/Feather';
-import {getScaleNumber} from '../../../../utils/dimentions/refDimentions';
+import {getScaleNumber} from '../../../../utils/dimentions/RefDimentions';
 import Colors from '../../../../utils/colors/Colors';
 import {useTranslation} from 'react-i18next';
+import VectorIcon from '../../../../components/elements/VectorIcon/VectorIcon';
+import {Authencate} from '../../../../redux/common/actions';
+import {useDispatch} from 'react-redux';
 
 const LoginForm = () => {
   const {formState, handleFormState} = useFormState();
   const navigation = useNavigation();
   const {t} = useTranslation();
+  const dispatch = useDispatch();
 
   return (
     <View style={styles.footerContainer}>
@@ -29,8 +31,9 @@ const LoginForm = () => {
         isValid={formState.formValidation.email.isValid}
         errorText={formState.formValidation.email.comment}
         iconLeft={
-          <IconFA
-            name={'envelope-o'}
+          <VectorIcon
+            type="FontAwesome"
+            name="envelope-o"
             size={getScaleNumber(24)}
             color={Colors.senary}
           />
@@ -46,8 +49,9 @@ const LoginForm = () => {
         isValid={formState.formValidation.password.isValid}
         errorText={formState.formValidation.password.comment}
         iconLeft={
-          <IconF
-            name={'lock'}
+          <VectorIcon
+            type="Feather"
+            name="lock"
             size={getScaleNumber(24)}
             color={Colors.senary}
           />
@@ -55,7 +59,10 @@ const LoginForm = () => {
         secureTextEntry={formState.formValidation.password.isSecured}
       />
       <ButtonPrimary
-        onPress={() => {}}
+        onPress={() => {
+          dispatch(Authencate());
+          console.log('authenticate pressed');
+        }}
         label={t('login')}
         fill={true}
         style={styles.buttonContainer}

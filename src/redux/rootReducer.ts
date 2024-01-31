@@ -1,6 +1,7 @@
 import {combineReducers} from 'redux';
 import sampleReducer from './sample/reducer';
 import authReducer from './auth/reducer';
+import commonReducer from './common/reducer';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import {persistReducer} from 'redux-persist';
 
@@ -12,8 +13,9 @@ const config = {
 };
 
 const rootReducer = combineReducers({
-  authReducer: persistReducer(config.authReducer, authReducer),
-  sampleReducer,
+  auth: persistReducer(config.authReducer, authReducer),
+  sample: sampleReducer,
+  common: commonReducer,
   // Add other reducers here
 });
 

@@ -5,11 +5,10 @@ import useFormState from './useFormState';
 import ButtonPrimary from '../../../../components/elements/ButtonPrimary/ButtonPrimary';
 import styles from './styles';
 import {useNavigation} from '@react-navigation/native';
-import IconFA from 'react-native-vector-icons/FontAwesome';
-import IconF from 'react-native-vector-icons/Feather';
-import {getScaleNumber} from '../../../../utils/dimentions/refDimentions';
+import {getScaleNumber} from '../../../../utils/dimentions/RefDimentions';
 import Colors from '../../../../utils/colors/Colors';
 import {useTranslation} from 'react-i18next';
+import VectorIcon from '../../../../components/elements/VectorIcon/VectorIcon';
 
 const SignupForm: React.FC = () => {
   const {formState, handleFormState} = useFormState();
@@ -44,7 +43,8 @@ const SignupForm: React.FC = () => {
         errorText={formState.formValidation.username.comment}
         secureTextEntry={false}
         iconLeft={
-          <IconFA
+          <VectorIcon
+            type={'FontAwesome'}
             name={'user-o'}
             size={getScaleNumber(24)}
             color={Colors.senary}
@@ -62,7 +62,8 @@ const SignupForm: React.FC = () => {
         errorText={formState.formValidation.email.comment}
         secureTextEntry={false}
         iconLeft={
-          <IconFA
+          <VectorIcon
+            type={'FontAwesome'}
             name={'envelope-o'}
             size={getScaleNumber(24)}
             color={Colors.senary}
@@ -79,8 +80,9 @@ const SignupForm: React.FC = () => {
         isValid={formState.formValidation.password.isValid}
         errorText={formState.formValidation.password.comment}
         iconLeft={
-          <IconF
-            name={'lock'}
+          <VectorIcon
+            type="Feather"
+            name="lock"
             size={getScaleNumber(24)}
             color={Colors.senary}
           />
@@ -101,8 +103,9 @@ const SignupForm: React.FC = () => {
         isValid={formState.formValidation.confirmPassword.isValid}
         errorText={formState.formValidation.confirmPassword.comment}
         iconLeft={
-          <IconF
-            name={'lock'}
+          <VectorIcon
+            type="Feather"
+            name="lock"
             size={getScaleNumber(24)}
             color={Colors.senary}
           />

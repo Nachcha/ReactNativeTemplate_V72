@@ -12,9 +12,9 @@ import Foundation from 'react-native-vector-icons/Foundation';
 import Octicons from 'react-native-vector-icons/Octicons';
 import SimpleLineIcons from 'react-native-vector-icons/SimpleLineIcons';
 import Zocial from 'react-native-vector-icons/Zocial';
-import {IVectorIconProps, IconLibrary} from './VectorIconTypes';
+import {IVectorIconProps, IconLibraryType} from './VectorIconTypes';
 
-const IconLibrary: IconLibrary = {
+const IconLibrary: IconLibraryType = {
   Feather: () => Feather,
   Ionicons: () => Ionicons,
   FontAwesome: () => FontAwesome,

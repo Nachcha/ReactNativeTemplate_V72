@@ -7,11 +7,10 @@ import About from '../presentation/app/About/About';
 import Analytics from '../presentation/app/Analytics/Analytics';
 import Home from '../presentation/app/Home/Home';
 import Profile from '../presentation/app/Profile/Profile';
-import IconMI from 'react-native-vector-icons/MaterialIcons';
-import IconFT from 'react-native-vector-icons/Fontisto';
 import Colors from '../utils/colors/Colors';
 import BottomTabIcon from '../components/elements/BottomTabIcon/BottomTabIcon';
-import {getScaleNumber} from '../utils/dimentions/refDimentions';
+import {getScaleNumber} from '../utils/dimentions/RefDimentions';
+import VectorIcon from '../components/elements/VectorIcon/VectorIcon';
 
 const Tab = createBottomTabNavigator<AppStackParameterList>();
 
@@ -41,7 +40,8 @@ export default function AppStack() {
               <BottomTabIcon
                 label="About"
                 icon={
-                  <IconMI
+                  <VectorIcon
+                    type="MaterialIcons"
                     name="description"
                     size={getScaleNumber(25)}
                     color={focused ? Colors.nonary : Colors.dark}
@@ -62,7 +62,8 @@ export default function AppStack() {
               <BottomTabIcon
                 label="Analytics"
                 icon={
-                  <IconMI
+                  <VectorIcon
+                    type="MaterialIcons"
                     name="analytics"
                     size={getScaleNumber(25)}
                     color={focused ? Colors.nonary : Colors.dark}
@@ -83,9 +84,10 @@ export default function AppStack() {
               <BottomTabIcon
                 label="Home"
                 icon={
-                  <IconMI
+                  <VectorIcon
+                    type="MaterialIcons"
                     name="home"
-                    size={getScaleNumber(40)}
+                    size={getScaleNumber(50)}
                     color={focused ? Colors.nonary : Colors.dark}
                   />
                 }
@@ -104,7 +106,8 @@ export default function AppStack() {
               <BottomTabIcon
                 label="Profile"
                 icon={
-                  <IconFT
+                  <VectorIcon
+                    type="Fontisto"
                     name="user-secret"
                     size={getScaleNumber(25)}
                     color={focused ? Colors.nonary : Colors.dark}
@@ -125,7 +128,8 @@ export default function AppStack() {
               <BottomTabIcon
                 label="Settings"
                 icon={
-                  <IconMI
+                  <VectorIcon
+                    type="MaterialIcons"
                     name="settings"
                     size={getScaleNumber(25)}
                     color={focused ? Colors.nonary : Colors.dark}
