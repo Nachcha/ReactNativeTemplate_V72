@@ -23,7 +23,7 @@ const screenOptions = {
     right: 0,
     left: 0,
     elevation: 0,
-    height: getScaleNumber(60),
+    height: 60,
     backgroundColor: '#ffffff',
   },
 };
@@ -87,7 +87,7 @@ export default function AppStack() {
                   <VectorIcon
                     type="MaterialIcons"
                     name="home"
-                    size={getScaleNumber(25)}
+                    size={getScaleNumber(50)}
                     color={focused ? Colors.nonary : Colors.dark}
                   />
                 }

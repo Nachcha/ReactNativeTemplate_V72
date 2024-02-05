@@ -4,7 +4,6 @@ import styles from './styles';
 import ButtonPrimary from '../../../../components/elements/ButtonPrimary/ButtonPrimary';
 import {useNavigation} from '@react-navigation/native';
 import {useTranslation} from 'react-i18next';
-import {NativeModules} from 'react-native';
 
 const Footer: React.FC = () => {
   const navigation = useNavigation();
@@ -18,10 +17,6 @@ const Footer: React.FC = () => {
         <ButtonPrimary
           onPress={() => {
             navigation.navigate('Login' as never);
-            // NativeModules.CoinbaseModule.increment(() => {
-            //   console.log('incremented');
-            // });
-            // NativeModules.CoinbaseModule.initialHandshake();
           }}
           style={styles.button}
           label={t('get-started')}
