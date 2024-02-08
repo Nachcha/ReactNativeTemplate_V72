@@ -8,8 +8,6 @@ const styles = StyleSheet.create({
     height: 76,
     alignSelf: 'center',
     backgroundColor: Colors.dark,
-    borderTopLeftRadius: 10,
-    borderTopRightRadius: 10,
     alignItems: 'center',
   },
   tabBarContainerIOS: {
