@@ -27,8 +27,14 @@ const styles = StyleSheet.create({
     flexDirection: 'column',
     backgroundColor: 'rgba(103, 58, 183, 0.1)',
   },
-  tabIcon: {width: 24, height: 24},
-  tabIconSelected: {width: 24, height: 24},
+  tabIcon: {
+    fontSize: 24,
+    color: Colors.white,
+  },
+  tabIconSelected: {
+    fontSize: 24,
+    color: Colors.tertiary,
+  },
   tabLabel: {
     fontSize: 10,
     marginTop: 4,

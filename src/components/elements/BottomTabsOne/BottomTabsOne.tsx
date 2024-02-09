@@ -66,8 +66,10 @@ const BottomTabBarOne: React.FC<BottomTabBarProps> = ({
             <VectorIcon
               type="MaterialIcons"
               name="rocket"
-              size={24}
-              style={options.tabBarIconStyle}
+              style={[
+                options.tabBarIconStyle,
+                isFocused ? styles.tabIconSelected : styles.tabIcon,
+              ]}
             />
             <Text
               style={[
