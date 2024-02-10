@@ -1,3 +1,5 @@
+import productData from '../utils/data/products.json';
+
 export type AuthStackParameterList = {
   Welcome: undefined;
   Login: undefined;
@@ -10,4 +12,9 @@ export type AppStackParameterList = {
   Profile: undefined;
   Home: undefined;
   Settings: undefined;
+};
+
+export type CommonStackParameterList = {
+  ProductList: undefined;
+  Product: {item: (typeof productData.products)[0]};
 };
