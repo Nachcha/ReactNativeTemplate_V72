@@ -7,14 +7,16 @@ export type AuthStackParameterList = {
 };
 
 export type AppStackParameterList = {
+  BottomTabs: undefined;
+  ProductList: undefined;
+  Product: {item: (typeof productData.products)[0]};
+  BasicAnimation: undefined;
+};
+
+export type BottomTabStackParameterList = {
   About: undefined;
   Analytics: undefined;
   Profile: undefined;
   Home: undefined;
   Settings: undefined;
-};
-
-export type CommonStackParameterList = {
-  ProductList: undefined;
-  Product: {item: (typeof productData.products)[0]};
 };

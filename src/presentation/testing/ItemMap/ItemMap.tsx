@@ -1,10 +1,4 @@
-import {
-  Image,
-  ScrollView,
-  TextInput,
-  TouchableOpacity,
-  View,
-} from 'react-native';
+import {ScrollView, TextInput, TouchableOpacity, View} from 'react-native';
 import React from 'react';
 import ScreenWithFooterAndHeader from '../../../components/layouts/ScreenWithFooterAndHeader/ScreenWithFooterandHeader';
 import Animated, {
@@ -19,13 +13,14 @@ import RightButton from '../../../components/layouts/Header/RightButton/RightBut
 import Colors from '../../../utils/colors/Colors';
 import styles from './styles';
 import productsData from '../../../utils/data/products.json';
-import {CommonStackParameterList} from '../../../navigation/types';
+import {AppStackParameterList} from '../../../navigation/types';
 import {NativeStackScreenProps} from '@react-navigation/native-stack';
+import {transitionOne} from '../../../utils/animations/sharedTransition';
 
 const AnimatedInput = Animated.createAnimatedComponent(TextInput);
 
 const ProductList: React.FC<
-  NativeStackScreenProps<CommonStackParameterList, 'ProductList'>
+  NativeStackScreenProps<AppStackParameterList, 'ProductList'>
 > = ({navigation}) => {
   const width = useSharedValue(150);
   const height = useSharedValue(150);
@@ -77,7 +72,10 @@ const ProductList: React.FC<
                 onPress={() => {
                   navigation.navigate('Product', {item: product});
                 }}>
-                <Image
+                <Animated.Image
+                  // Shared transition tag Allows the transition to be shared animation between the two screens
+                  sharedTransitionTag={`product-${product.id}-image`}
+                  sharedTransitionStyle={transitionOne}
                   source={{uri: product.thumbnail}}
                   style={{width: 200, height: 200}}
                   resizeMode="cover"

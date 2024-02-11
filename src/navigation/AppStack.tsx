@@ -1,31 +1,30 @@
-/* eslint-disable react/no-unstable-nested-components */
 import * as React from 'react';
-import Settings from '../presentation/app/Settings/Settings';
 import {AppStackParameterList} from './types';
-import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
-import About from '../presentation/app/About/About';
-import Analytics from '../presentation/app/Analytics/Analytics';
-import Home from '../presentation/app/Home/Home';
-import Profile from '../presentation/app/Profile/Profile';
-import BottomTabBarOne from '../components/elements/BottomTabsOne/BottomTabsOne';
+import {createNativeStackNavigator} from '@react-navigation/native-stack';
+import ProductList from '../presentation/testing/ItemMap/ItemMap';
+import Product from '../presentation/testing/ItemDetails/ItemDetails';
+import BottomTabStack from './BottomTabStack';
+import BasicAnimation from '../presentation/testing/BasicAnimation/BasicAnimation';
 
-const Tab = createBottomTabNavigator<AppStackParameterList>();
+const Stack = createNativeStackNavigator<AppStackParameterList>();
 
-const screenOptions = {
-  tabBarShowLabel: false,
-  headerShown: false,
+const groupTwoScreenOptions = {
+  headerBackButtonMenuEnabled: true,
 };
 
-export default function AppStack() {
+const AppStack: React.FC = () => {
   return (
-    <Tab.Navigator
-      screenOptions={screenOptions}
-      tabBar={props => <BottomTabBarOne {...props} />}>
-      <Tab.Screen name="About" component={About} />
-      <Tab.Screen name="Analytics" component={Analytics} />
-      <Tab.Screen name="Home" component={Home} />
-      <Tab.Screen name="Profile" component={Profile} />
-      <Tab.Screen name="Settings" component={Settings} />
-    </Tab.Navigator>
+    <Stack.Navigator initialRouteName="BottomTabs">
+      <Stack.Group screenOptions={{headerShown: false}}>
+        <Stack.Screen name="BottomTabs" component={BottomTabStack} />
+      </Stack.Group>
+      <Stack.Group screenOptions={groupTwoScreenOptions}>
+        <Stack.Screen name="ProductList" component={ProductList} />
+        <Stack.Screen name="Product" component={Product} />
+        <Stack.Screen name="BasicAnimation" component={BasicAnimation} />
+      </Stack.Group>
+    </Stack.Navigator>
   );
-}
+};
+
+export default AppStack;
