@@ -34,13 +34,38 @@ const About: React.FC<
       />
       <ButtonPrimary
         style={{width: '70%', margin: 5}}
-        label="Pan Responder"
-        onPress={() => {}}
+        label="Pan Guesture Handler"
+        onPress={() => {
+          navigation.navigate('PanGuestureHandler');
+        }}
       />
       <ButtonPrimary
         style={{width: '70%', margin: 5}}
-        label="Tap Responder"
-        onPress={() => {}}
+        label="Interpolate ScrollView"
+        onPress={() => {
+          navigation.navigate('InterpolateScrollView');
+        }}
+      />
+      <ButtonPrimary
+        style={{width: '70%', margin: 5}}
+        label="Interpolate Colors"
+        onPress={() => {
+          navigation.navigate('InterpolateColors');
+        }}
+      />
+      <ButtonPrimary
+        style={{width: '70%', margin: 5}}
+        label="Pinch GestureHandler"
+        onPress={() => {
+          navigation.navigate('PinchGestureHandler');
+        }}
+      />
+      <ButtonPrimary
+        style={{width: '70%', margin: 5}}
+        label="Pinch GestureHandler"
+        onPress={() => {
+          navigation.navigate('PinchGestureHandler');
+        }}
       />
     </ScreenWithFooterAndHeader>
   );

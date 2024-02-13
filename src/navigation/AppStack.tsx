@@ -5,6 +5,10 @@ import ProductList from '../presentation/testing/ItemMap/ItemMap';
 import Product from '../presentation/testing/ItemDetails/ItemDetails';
 import BottomTabStack from './BottomTabStack';
 import BasicAnimation from '../presentation/testing/BasicAnimation/BasicAnimation';
+import PanGuestureHandler from '../presentation/testing/PanGuestureHandler/PanGuestureHandler';
+import InterpolateScrollView from '../presentation/testing/InterpolateScrollView/InterpolateScrollView';
+import InterpolateColors from '../presentation/testing/InterpolateColors/InterpolateColors';
+import PinchGestureHandler from '../presentation/testing/PinchGuestureHandler/PinchGuestureHandler';
 
 const Stack = createNativeStackNavigator<AppStackParameterList>();
 
@@ -22,6 +26,19 @@ const AppStack: React.FC = () => {
         <Stack.Screen name="ProductList" component={ProductList} />
         <Stack.Screen name="Product" component={Product} />
         <Stack.Screen name="BasicAnimation" component={BasicAnimation} />
+        <Stack.Screen
+          name="PanGuestureHandler"
+          component={PanGuestureHandler}
+        />
+        <Stack.Screen
+          name="InterpolateScrollView"
+          component={InterpolateScrollView}
+        />
+        <Stack.Screen name="InterpolateColors" component={InterpolateColors} />
+        <Stack.Screen
+          name="PinchGestureHandler"
+          component={PinchGestureHandler}
+        />
       </Stack.Group>
     </Stack.Navigator>
   );

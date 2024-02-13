@@ -11,6 +11,10 @@ export type AppStackParameterList = {
   ProductList: undefined;
   Product: {item: (typeof productData.products)[0]};
   BasicAnimation: undefined;
+  PanGuestureHandler: undefined;
+  InterpolateScrollView: undefined;
+  InterpolateColors: undefined;
+  PinchGestureHandler: undefined;
 };
 
 export type BottomTabStackParameterList = {
