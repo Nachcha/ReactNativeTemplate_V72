@@ -13,6 +13,8 @@ interface IHeaderProps extends PropsWithChildren {
   leftButton?: JSX.Element;
   /**
    * Topic of the header
+   * @example 'Welcome'
+   * @required
    */
   topic: string;
   /**
