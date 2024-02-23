@@ -49,7 +49,7 @@ const IconButton: React.FC<IBottomTabIconButtonProps> = ({
         name={icon?.name || 'rocket'}
         style={[
           options.tabBarIconStyle,
-          isFocused ? styles.tabIconSelected : styles.tabIcon,
+          styles.tabIcon,
           animatedContainerStyle,
         ]}
       />

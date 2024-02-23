@@ -9,13 +9,13 @@ import Animated, {
   withSpring,
 } from 'react-native-reanimated';
 import IconButton from './IconButton';
-import {BottomTabsIconList} from '../elementTypes';
+import {BottomTabsIconMap} from '../elementTypes';
 
 const {width} = Dimensions.get('window');
 const padding = 16;
 
 const BottomTabBarOne: React.FC<
-  BottomTabBarProps & {icons: BottomTabsIconList}
+  BottomTabBarProps & {icons: BottomTabsIconMap}
 > = ({icons, state, descriptors, navigation}) => {
   const translateX = useSharedValue(0);
   const pointerStyle = useAnimatedStyle(() => {
@@ -70,7 +70,7 @@ const BottomTabBarOne: React.FC<
 
         return (
           <IconButton
-            icon={icons[index]}
+            icon={icons[label as keyof BottomTabsIconMap]}
             key={route.key}
             label={label}
             isFocused={isFocused}

@@ -37,24 +37,20 @@ const styles = StyleSheet.create({
     }),
   },
   animatedView: {
-    backgroundColor: Colors.septenary,
+    backgroundColor: Colors.primary,
     height: 50,
     borderRadius: 100,
     zIndex: 0,
   },
   tabButtonContainer: {
     flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
     flexDirection: 'column',
+    alignItems: 'center',
+    justifyContent: 'flex-start',
   },
   tabIcon: {
     fontSize: 24,
     color: Colors.white,
-  },
-  tabIconSelected: {
-    fontSize: 24,
-    color: Colors.tertiary,
   },
   tabLabel: {
     fontSize: 10,

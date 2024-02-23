@@ -6,6 +6,7 @@ import {
   TouchableOpacityProps,
 } from 'react-native';
 import {BottomTabNavigationOptions} from '@react-navigation/bottom-tabs';
+import {BottomTabStackParameterList} from '../../navigation/types';
 import {IconTypes} from './VectorIcon/VectorIconTypes';
 
 export interface IImageViewProps extends ImageProps {
@@ -67,4 +68,6 @@ export interface IBottomTabIconButtonProps {
   onLongPress: () => void;
 }
 
-export type BottomTabsIconList = {group: IconTypes; name: string}[];
+export type BottomTabsIconMap = {
+  [key in keyof BottomTabStackParameterList]: {group: IconTypes; name: string};
+};

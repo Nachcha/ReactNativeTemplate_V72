@@ -9,7 +9,7 @@ import Settings from '../presentation/app/Settings/Settings';
 import BottomTabBarOne from '../components/elements/BottomTabsOne/BottomTabsOne';
 import {AppStackParameterList, BottomTabStackParameterList} from './types';
 import {NativeStackScreenProps} from '@react-navigation/native-stack';
-import {BottomTabsIconList} from '../components/elements/elementTypes';
+import {BottomTabsIconMap} from '../components/elements/elementTypes';
 
 const Tab = createBottomTabNavigator<BottomTabStackParameterList>();
 
@@ -18,28 +18,28 @@ const screenOptions = {
   headerShown: false,
 };
 
-const iconList: BottomTabsIconList = [
-  {
+const iconList: BottomTabsIconMap = {
+  About: {
     name: 'info',
     group: 'MaterialIcons',
   },
-  {
+  Analytics: {
     name: 'lab-flask',
     group: 'Entypo',
   },
-  {
+  Home: {
     name: 'home',
     group: 'Ionicons',
   },
-  {
+  Profile: {
     name: 'person',
     group: 'Fontisto',
   },
-  {
+  Settings: {
     name: 'settings',
     group: 'MaterialIcons',
   },
-];
+};
 
 const BottomTabStack: React.FC<
   NativeStackScreenProps<AppStackParameterList, 'BottomTabs'>
