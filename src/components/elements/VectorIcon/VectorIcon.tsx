@@ -1,4 +1,5 @@
 import React from 'react';
+import {Component} from 'react';
 import Feather from 'react-native-vector-icons/Feather';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
@@ -30,9 +31,12 @@ const IconLibrary: IconLibraryType = {
   Zocial: () => Zocial,
 };
 
-const VectorIcon: React.FC<IVectorIconProps> = ({type, ...restProps}) => {
-  const Icon = IconLibrary[type]();
-  return <Icon {...restProps} />;
-};
+class VectorIcon extends Component<IVectorIconProps> {
+  render() {
+    const {type, ...restProps} = this.props;
+    const Icon = IconLibrary[type]();
+    return <Icon {...restProps} />;
+  }
+}
 
 export default VectorIcon;

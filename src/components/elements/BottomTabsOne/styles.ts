@@ -1,4 +1,4 @@
-import {StyleSheet} from 'react-native';
+import {Platform, StyleSheet} from 'react-native';
 import Colors from '../../../utils/colors/Colors';
 
 const styles = StyleSheet.create({
@@ -9,41 +9,53 @@ const styles = StyleSheet.create({
     alignSelf: 'center',
     backgroundColor: Colors.dark,
     alignItems: 'center',
+    paddingHorizontal: 16,
+    ...Platform.select({
+      ios: {
+        height: 76,
+        paddingBottom: 16,
+      },
+      android: {
+        height: 60,
+      },
+    }),
   },
-  tabBarContainerIOS: {
-    paddingBottom: 16,
+  tabBarAnimatedContainer: {
+    position: 'absolute',
+    justifyContent: 'center',
+    width: '100%',
+    backgroundColor: Colors.dark,
+    paddingHorizontal: 16,
+    ...Platform.select({
+      ios: {
+        height: 76,
+        paddingBottom: 16,
+      },
+      android: {
+        height: 60,
+      },
+    }),
   },
-  tabBarContainerAndroid: {},
+  animatedView: {
+    backgroundColor: Colors.primary,
+    height: 50,
+    borderRadius: 100,
+    zIndex: 0,
+  },
   tabButtonContainer: {
     flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
     flexDirection: 'column',
-  },
-  tabButtonContainerSelected: {
-    flex: 1,
     alignItems: 'center',
-    justifyContent: 'center',
-    flexDirection: 'column',
-    backgroundColor: 'rgba(103, 58, 183, 0.1)',
+    justifyContent: 'flex-start',
   },
   tabIcon: {
     fontSize: 24,
     color: Colors.white,
   },
-  tabIconSelected: {
-    fontSize: 24,
-    color: Colors.tertiary,
-  },
   tabLabel: {
     fontSize: 10,
     marginTop: 4,
     color: Colors.white,
-  },
-  tabLabelSelected: {
-    fontSize: 10,
-    marginTop: 4,
-    color: Colors.tertiary,
   },
 });
 

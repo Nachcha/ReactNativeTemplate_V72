@@ -7,12 +7,12 @@ import Signup from '../presentation/auth/Signup/Signup';
 
 const Stack = createNativeStackNavigator<AuthStackParameterList>();
 
-export default function AuthStack() {
+const AuthStack: React.FC = () => {
   return (
     <Stack.Navigator
       screenOptions={{
         gestureEnabled: false,
-        animation: 'slide_from_bottom',
+        animation: 'slide_from_right',
         headerShown: false,
       }}
       initialRouteName="Welcome">
@@ -25,4 +25,6 @@ export default function AuthStack() {
       />
     </Stack.Navigator>
   );
-}
+};
+
+export default AuthStack;

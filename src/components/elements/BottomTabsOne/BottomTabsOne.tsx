@@ -1,23 +1,44 @@
-import React from 'react';
+/* eslint-disable react-hooks/exhaustive-deps */
+import React, {useEffect} from 'react';
 import {BottomTabBarProps} from '@react-navigation/bottom-tabs';
-import {View, Text, TouchableOpacity, Platform} from 'react-native';
+import {View, Dimensions} from 'react-native';
 import styles from './styles';
-import VectorIcon from '../VectorIcon/VectorIcon';
+import Animated, {
+  useAnimatedStyle,
+  useSharedValue,
+  withSpring,
+} from 'react-native-reanimated';
+import IconButton from './IconButton';
+import {BottomTabsIconMap} from '../elementTypes';
 
-const BottomTabBarOne: React.FC<BottomTabBarProps> = ({
-  state,
-  descriptors,
-  navigation,
-}) => {
+const {width} = Dimensions.get('window');
+const padding = 16;
+
+const BottomTabBarOne: React.FC<
+  BottomTabBarProps & {icons: BottomTabsIconMap}
+> = ({icons, state, descriptors, navigation}) => {
+  const translateX = useSharedValue(0);
+  const pointerStyle = useAnimatedStyle(() => {
+    return {
+      width: (width - padding * 2) / state.routes.length,
+      transform: [{translateX: translateX.value}],
+    };
+  });
+  useEffect(() => {
+    translateX.value = withSpring(
+      ((width - padding * 2) / state.routes.length) * state.index,
+      {
+        stiffness: 500,
+        damping: 55,
+        mass: 3,
+      },
+    );
+  }, [state.index]);
   return (
-    <View
-      style={[
-        styles.tabBarContainer,
-        Platform.OS === 'ios'
-          ? styles.tabBarContainerIOS
-          : styles.tabBarContainerAndroid,
-        descriptors.tabbarStyle,
-      ]}>
+    <View style={[styles.tabBarContainer]}>
+      <View style={[styles.tabBarAnimatedContainer]}>
+        <Animated.View style={[styles.animatedView, pointerStyle]} />
+      </View>
       {state.routes.map((route, index) => {
         const {options} = descriptors[route.key];
         const label =
@@ -40,7 +61,6 @@ const BottomTabBarOne: React.FC<BottomTabBarProps> = ({
             navigation.navigate(route.name, route.params);
           }
         };
-
         const onLongPress = () => {
           navigation.emit({
             type: 'tabLongPress',
@@ -49,36 +69,15 @@ const BottomTabBarOne: React.FC<BottomTabBarProps> = ({
         };
 
         return (
-          <TouchableOpacity
+          <IconButton
+            icon={icons[label as keyof BottomTabsIconMap]}
             key={route.key}
-            accessibilityRole="button"
-            accessibilityState={isFocused ? {selected: true} : {}}
-            accessibilityLabel={options.tabBarAccessibilityLabel}
-            testID={options.tabBarTestID}
+            label={label}
+            isFocused={isFocused}
+            options={options}
             onPress={onPress}
             onLongPress={onLongPress}
-            style={[
-              isFocused
-                ? styles.tabButtonContainerSelected
-                : styles.tabButtonContainer,
-              options.tabBarItemStyle,
-            ]}>
-            <VectorIcon
-              type="MaterialIcons"
-              name="rocket"
-              style={[
-                options.tabBarIconStyle,
-                isFocused ? styles.tabIconSelected : styles.tabIcon,
-              ]}
-            />
-            <Text
-              style={[
-                isFocused ? styles.tabLabelSelected : styles.tabLabel,
-                options.tabBarLabelStyle,
-              ]}>
-              {label as string}
-            </Text>
-          </TouchableOpacity>
+          />
         );
       })}
     </View>

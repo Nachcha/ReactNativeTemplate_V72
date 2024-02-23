@@ -5,6 +5,9 @@ import {
   TextStyle,
   TouchableOpacityProps,
 } from 'react-native';
+import {BottomTabNavigationOptions} from '@react-navigation/bottom-tabs';
+import {BottomTabStackParameterList} from '../../navigation/types';
+import {IconTypes} from './VectorIcon/VectorIconTypes';
 
 export interface IImageViewProps extends ImageProps {
   /**
@@ -34,25 +37,37 @@ export interface IButtonPrimaryProps extends TouchableOpacityProps {
   fill?: boolean;
 }
 
-export interface IBottomTabIconProps {
+export interface IBottomTabIconButtonProps {
+  icon?: {group: IconTypes; name: string};
   /**
    * Tab name
    */
-  label: string;
-  /**
-   * Tab icon
-   */
-  icon: JSX.Element;
+  label:
+    | string
+    | ((props: {
+        focused: boolean;
+        color: string;
+        position: LabelPosition;
+        children: string;
+      }) => ReactNode);
   /**
    * is the tab selected
    */
-  focused: boolean;
+  isFocused: boolean;
   /**
-   * Additional styles for label
+   * options for icon button
    */
-  labelStyle?: TextStyle;
+  options: BottomTabNavigationOptions;
   /**
-   * Additional styles for container
+   * onPress event
    */
-  style?: ViewStyle;
+  onPress: () => void;
+  /**
+   * onLongPress event
+   */
+  onLongPress: () => void;
 }
+
+export type BottomTabsIconMap = {
+  [key in keyof BottomTabStackParameterList]: {group: IconTypes; name: string};
+};
