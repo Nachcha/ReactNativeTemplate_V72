@@ -12,6 +12,7 @@ import {Authencate} from '../../../../redux/common/actions';
 import {useDispatch} from 'react-redux';
 import {NativeStackNavigationProp} from '@react-navigation/native-stack';
 import {AuthStackParameterList} from '../../../../navigation/types';
+import TextButton from '../../../../components/elements/TextButton/TextButton';
 
 interface ILoginFormProps {
   navigation: NativeStackNavigationProp<
@@ -70,13 +71,21 @@ const LoginForm: React.FC<ILoginFormProps> = ({navigation}) => {
         testID="login-password-input"
         accessibilityLabel="login-password-input"
       />
+      <View style={styles.forgotPasswordContainer}>
+        <TextButton
+          label={t('forgot-password?')}
+          onPress={() => {
+            navigation.navigate('ForgotPassword');
+          }}
+        />
+      </View>
       <ButtonPrimary
         onPress={() => {
           dispatch(Authencate());
           console.log('authenticate pressed');
         }}
-        testID="loginButton"
-        accessibilityLabel="loginButton"
+        testID="login-login-button"
+        accessibilityLabel="login-login-button"
         label={t('login')}
         fill={true}
         style={styles.buttonContainer}
@@ -85,8 +94,8 @@ const LoginForm: React.FC<ILoginFormProps> = ({navigation}) => {
         onPress={() => {
           navigation.navigate('Signup');
         }}
-        testID="navigateToSignupButton"
-        accessibilityLabel="navigateToSignupButton"
+        testID="login-signup-button"
+        accessibilityLabel="login-signup-button"
         label={t('signup')}
         fill={false}
         style={styles.buttonContainer}

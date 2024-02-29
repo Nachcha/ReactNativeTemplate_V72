@@ -71,3 +71,18 @@ export interface IBottomTabIconButtonProps {
 export type BottomTabsIconMap = {
   [key in keyof BottomTabStackParameterList]: {group: IconTypes; name: string};
 };
+
+export interface ITextButtonProps extends TouchableOpacityProps {
+  /**
+   * button text
+   */
+  label: string;
+  /**
+   * button container style
+   */
+  style?: ViewStyle;
+  /**
+   * button text style
+   */
+  textStyle?: TextStyle;
+}

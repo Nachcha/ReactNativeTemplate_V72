@@ -66,4 +66,16 @@ describe('Login screen', () => {
     fireEvent.changeText(passwordInput, 'password123');
     expect(passwordInput.props.value).toBe('password123');
   });
+
+  it('should respond to login button press', () => {
+    const {getByTestId} = render(login);
+    const submitButton = getByTestId('login-login-button');
+    fireEvent.press(submitButton);
+  });
+
+  it('should respond to forgot password button press', () => {
+    const {getByTestId} = render(login);
+    const forgotPasswordButton = getByTestId('login-forgot-password-button');
+    fireEvent.press(forgotPasswordButton);
+  });
 });

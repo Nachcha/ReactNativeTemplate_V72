@@ -4,6 +4,8 @@ import {AuthStackParameterList} from './types';
 import Welcome from '../presentation/auth/Welcome/Welcome';
 import Login from '../presentation/auth/Login/Login';
 import Signup from '../presentation/auth/Signup/Signup';
+import ForgotPassword from '../presentation/auth/ForgotPassword/ForgotPassword';
+import ResetPassword from '../presentation/auth/ResetPassword/ResetPassword';
 
 const Stack = createNativeStackNavigator<AuthStackParameterList>();
 
@@ -23,6 +25,8 @@ const AuthStack: React.FC = () => {
         name="Signup"
         component={Signup}
       />
+      <Stack.Screen name="ForgotPassword" component={ForgotPassword} />
+      <Stack.Screen name="ResetPassword" component={ResetPassword} />
     </Stack.Navigator>
   );
 };

@@ -10,6 +10,8 @@ import Animated, {
   useSharedValue,
   withTiming,
 } from 'react-native-reanimated';
+import {useTranslation} from 'react-i18next';
+import StringSet from '../../../@types/i18strings';
 
 const AnimatedVectorIcon = Animated.createAnimatedComponent(VectorIcon);
 
@@ -21,6 +23,7 @@ const IconButton: React.FC<IBottomTabIconButtonProps> = ({
   onPress,
   onLongPress,
 }) => {
+  const {t} = useTranslation();
   const scale = useSharedValue(1);
 
   useEffect(() => {
@@ -58,7 +61,7 @@ const IconButton: React.FC<IBottomTabIconButtonProps> = ({
           entering={FadeInDown.duration(300)}
           exiting={FadeOutDown.duration(300)}
           style={[styles.tabLabel, options.tabBarLabelStyle]}>
-          {label as string | React.ReactNode}
+          {t(label as keyof StringSet)}
         </Animated.Text>
       )}
     </Pressable>
