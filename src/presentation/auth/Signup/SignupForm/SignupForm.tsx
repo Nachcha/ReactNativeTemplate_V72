@@ -4,15 +4,23 @@ import InputText from '../../../../components/inputs/InputText/InputText';
 import useFormState from './useFormState';
 import ButtonPrimary from '../../../../components/elements/ButtonPrimary/ButtonPrimary';
 import styles from './styles';
-import {useNavigation} from '@react-navigation/native';
 import {getScaleNumber} from '../../../../utils/dimentions/RefDimentions';
 import Colors from '../../../../utils/colors/Colors';
 import {useTranslation} from 'react-i18next';
 import VectorIcon from '../../../../components/elements/VectorIcon/VectorIcon';
+import {NativeStackNavigationProp} from '@react-navigation/native-stack';
+import {AuthStackParameterList} from '../../../../navigation/types';
 
-const SignupForm: React.FC = () => {
+interface ISignupFormProps {
+  navigation: NativeStackNavigationProp<
+    AuthStackParameterList,
+    'Signup',
+    undefined
+  >;
+}
+
+const SignupForm: React.FC<ISignupFormProps> = ({navigation}) => {
   const {formState, handleFormState} = useFormState();
-  const navigation = useNavigation();
   const [keyboardStatus, setKeyboardStatus] = useState<Boolean>(false);
   const {t} = useTranslation();
 
@@ -122,7 +130,7 @@ const SignupForm: React.FC = () => {
           />
           <ButtonPrimary
             onPress={() => {
-              navigation.navigate('Login' as never);
+              navigation.navigate('Login');
             }}
             label={t('login')}
             fill={false}

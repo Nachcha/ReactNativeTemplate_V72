@@ -15,6 +15,8 @@ const InputText: React.FC<IInputTextProps> = ({
   secureTextEntry,
   isValid = true,
   errorText,
+  testID,
+  accessibilityLabel,
   ...restProps
 }) => {
   const [isPasswordVisible, setIsPasswordVisible] = useState(false);
@@ -25,7 +27,12 @@ const InputText: React.FC<IInputTextProps> = ({
 
   return (
     <View style={[styles.container, style]}>
-      <Text style={styles.label}>{label || 'Label'}</Text>
+      <Text
+        style={styles.label}
+        testID={`${testID}-label`}
+        accessibilityLabel={`${accessibilityLabel}-label`}>
+        {label || 'Label'}
+      </Text>
       <View style={styles.inputContainer}>
         {iconLeft || (
           <IconFA name={'file-text-o'} size={getScaleNumber(24)} color="gray" />
@@ -34,12 +41,16 @@ const InputText: React.FC<IInputTextProps> = ({
           style={[styles.input, inputStyle]}
           placeholder={placeholder || 'Placeholder'}
           secureTextEntry={secureTextEntry && !isPasswordVisible}
+          testID={testID}
+          accessibilityLabel={accessibilityLabel}
           {...restProps}
         />
         {secureTextEntry && (
           <TouchableOpacity
             onPress={togglePasswordVisibility}
-            style={styles.iconContainer}>
+            style={styles.iconContainer}
+            testID={`${testID}-right-button`}
+            accessibilityLabel={`${accessibilityLabel}-right-button`}>
             <IconFA
               name={isPasswordVisible ? 'eye-slash' : 'eye'}
               size={getScaleNumber(24)}
@@ -50,7 +61,12 @@ const InputText: React.FC<IInputTextProps> = ({
       </View>
       {!isValid && (
         <View style={styles.errorContainer}>
-          <Text style={styles.comment}>{errorText || 'Error'}</Text>
+          <Text
+            style={styles.comment}
+            testID={`${testID}-error-text`}
+            accessibilityLabel={`${accessibilityLabel}-error-text`}>
+            {errorText || 'Error'}
+          </Text>
         </View>
       )}
     </View>

@@ -2,11 +2,19 @@ import {Text, View} from 'react-native';
 import React from 'react';
 import styles from './styles';
 import ButtonPrimary from '../../../../components/elements/ButtonPrimary/ButtonPrimary';
-import {useNavigation} from '@react-navigation/native';
 import {useTranslation} from 'react-i18next';
+import {NativeStackNavigationProp} from '@react-navigation/native-stack';
+import {AuthStackParameterList} from '../../../../navigation/types';
 
-const Footer: React.FC = () => {
-  const navigation = useNavigation();
+interface IFooterProps {
+  navigation: NativeStackNavigationProp<
+    AuthStackParameterList,
+    'Welcome',
+    undefined
+  >;
+}
+
+const Footer: React.FC<IFooterProps> = ({navigation}) => {
   const {t} = useTranslation();
   return (
     <View style={styles.container}>
@@ -16,8 +24,10 @@ const Footer: React.FC = () => {
       <View style={styles.buttonContainer}>
         <ButtonPrimary
           onPress={() => {
-            navigation.navigate('Login' as never);
+            navigation.navigate('Login');
           }}
+          testID="continue-from-welcome-button"
+          accessibilityLabel="continue-from-welcome-button"
           style={styles.button}
           label={t('get-started')}
           fill={false}

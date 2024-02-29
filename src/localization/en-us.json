@@ -16,5 +16,10 @@
     "username": "Username",
     "enter-your-username": "Enter your username",
     "confirm-password": "Confirm Password",
-    "re-enter-your-password": "Re-enter your password"
+    "re-enter-your-password": "Re-enter your password",
+    "About": "About",
+    "Analytics": "Analytics",
+    "Home": "Home",
+    "Profile": "Profile",
+    "Settings": "Settings"
 }

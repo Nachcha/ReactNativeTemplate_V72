@@ -4,17 +4,25 @@ import InputText from '../../../../components/inputs/InputText/InputText';
 import useFormState from './useFormState';
 import ButtonPrimary from '../../../../components/elements/ButtonPrimary/ButtonPrimary';
 import styles from './styles';
-import {useNavigation} from '@react-navigation/native';
 import {getScaleNumber} from '../../../../utils/dimentions/RefDimentions';
 import Colors from '../../../../utils/colors/Colors';
 import {useTranslation} from 'react-i18next';
 import VectorIcon from '../../../../components/elements/VectorIcon/VectorIcon';
 import {Authencate} from '../../../../redux/common/actions';
 import {useDispatch} from 'react-redux';
+import {NativeStackNavigationProp} from '@react-navigation/native-stack';
+import {AuthStackParameterList} from '../../../../navigation/types';
 
-const LoginForm = () => {
+interface ILoginFormProps {
+  navigation: NativeStackNavigationProp<
+    AuthStackParameterList,
+    'Login',
+    undefined
+  >;
+}
+
+const LoginForm: React.FC<ILoginFormProps> = ({navigation}) => {
   const {formState, handleFormState} = useFormState();
-  const navigation = useNavigation();
   const {t} = useTranslation();
   const dispatch = useDispatch();
 
@@ -38,6 +46,8 @@ const LoginForm = () => {
             color={Colors.senary}
           />
         }
+        testID="login-email-input"
+        accessibilityLabel="login-email-input"
       />
       <InputText
         label={t('password')}
@@ -57,20 +67,26 @@ const LoginForm = () => {
           />
         }
         secureTextEntry={formState.formValidation.password.isSecured}
+        testID="login-password-input"
+        accessibilityLabel="login-password-input"
       />
       <ButtonPrimary
         onPress={() => {
           dispatch(Authencate());
           console.log('authenticate pressed');
         }}
+        testID="loginButton"
+        accessibilityLabel="loginButton"
         label={t('login')}
         fill={true}
         style={styles.buttonContainer}
       />
       <ButtonPrimary
         onPress={() => {
-          navigation.navigate('Signup' as never);
+          navigation.navigate('Signup');
         }}
+        testID="navigateToSignupButton"
+        accessibilityLabel="navigateToSignupButton"
         label={t('signup')}
         fill={false}
         style={styles.buttonContainer}

@@ -55,12 +55,19 @@ const validateOnChange = (
   value: string,
   field: IAction['field'],
 ): ValidatorFormType => {
-  state.formData[field] = value;
   switch (field) {
     case 'email':
+      state.formData[field] = value.replace(/[^a-zA-Z0-9@._-]/g, '');
+      state.formValidation[field].isValid =
+        /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(state.formData[field]) ||
+        state.formData[field] === '';
+      state.formValidation[field].comment = state.formValidation[field].isValid
+        ? ''
+        : 'Invalid email format';
       return state;
 
     case 'password':
+      state.formData[field] = value;
       return state;
 
     default:
