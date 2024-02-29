@@ -69,15 +69,41 @@ const validateOnChange = (
   state.formData[field] = value;
   switch (field) {
     case 'username':
+      state.formData[field] = value.replace(/[^a-zA-Z0-9_\-.]/g, '');
       return state;
 
     case 'email':
+      state.formData[field] = value.replace(/[^a-zA-Z0-9@._-]/g, '');
+      state.formValidation[field].isValid =
+        /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(state.formData[field]) ||
+        state.formData[field] === '';
+      state.formValidation[field].comment = state.formValidation[field].isValid
+        ? ''
+        : 'Invalid email format';
       return state;
 
     case 'password':
+      state.formData[field] = value.replace(
+        /[^a-zA-Z0-9!@#$%^&*'"_:;,?.-]/g,
+        '',
+      );
+      state.formValidation[field].isValid =
+        (value.length >= 10 && value.length <= 20) || value === '';
+      state.formValidation[field].comment = state.formValidation[field].isValid
+        ? ''
+        : 'Password must be between 10 and 20';
       return state;
 
     case 'confirmPassword':
+      state.formData[field] = value.replace(
+        /[^a-zA-Z0-9!@#$%^&*'"_:;,?./-]/g,
+        '',
+      );
+      state.formValidation[field].isValid =
+        (value.length >= 10 && value.length <= 20) || value === '';
+      state.formValidation[field].comment = state.formValidation[field].isValid
+        ? ''
+        : 'Confirm Password must be between 10 and 20';
       return state;
 
     default:

@@ -44,8 +44,8 @@ const ResetPasswordForm: React.FC<ILResetPasswordFormProps> = ({
           />
         }
         secureTextEntry={formState.formValidation.password.isSecured}
-        testID="login-password-input"
-        accessibilityLabel="login-password-input"
+        testID="reset-password-password-input"
+        accessibilityLabel="reset-password-password-input"
       />
       <InputText
         label={t('confirm-password')}
@@ -69,8 +69,8 @@ const ResetPasswordForm: React.FC<ILResetPasswordFormProps> = ({
           />
         }
         secureTextEntry={formState.formValidation.confirmPassword.isSecured}
-        testID="login-password-input"
-        accessibilityLabel="login-password-input"
+        testID="reset-password-confirm-password-input"
+        accessibilityLabel="reset-password-confirm-password-input"
       />
       <ButtonPrimary
         onPress={() => {

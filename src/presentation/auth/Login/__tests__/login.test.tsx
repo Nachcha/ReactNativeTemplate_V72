@@ -1,7 +1,7 @@
 import 'react-native';
 import React from 'react';
 import {render, fireEvent} from '@testing-library/react-native';
-import Login from '../../../../../src/presentation/auth/Login/Login';
+import Login from '../Login';
 import {Provider} from 'react-redux';
 import {store} from '../../../../../src/redux/store';
 import {NativeStackNavigationProp} from '@react-navigation/native-stack';
@@ -67,15 +67,21 @@ describe('Login screen', () => {
     expect(passwordInput.props.value).toBe('password123');
   });
 
-  it('should respond to login button press', () => {
-    const {getByTestId} = render(login);
-    const submitButton = getByTestId('login-login-button');
-    fireEvent.press(submitButton);
-  });
-
   it('should respond to forgot password button press', () => {
     const {getByTestId} = render(login);
     const forgotPasswordButton = getByTestId('login-forgot-password-button');
+    fireEvent.press(forgotPasswordButton);
+  });
+
+  it('should respond to login button press', () => {
+    const {getByTestId} = render(login);
+    const forgotPasswordButton = getByTestId('login-login-button');
+    fireEvent.press(forgotPasswordButton);
+  });
+
+  it('should respond to signup button press', () => {
+    const {getByTestId} = render(login);
+    const forgotPasswordButton = getByTestId('login-signup-button');
     fireEvent.press(forgotPasswordButton);
   });
 });

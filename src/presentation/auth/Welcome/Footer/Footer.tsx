@@ -26,8 +26,8 @@ const Footer: React.FC<IFooterProps> = ({navigation}) => {
           onPress={() => {
             navigation.navigate('Login');
           }}
-          testID="continue-from-welcome-button"
-          accessibilityLabel="continue-from-welcome-button"
+          testID="welcome-continue-button"
+          accessibilityLabel="welcome-continue-button"
           style={styles.button}
           label={t('get-started')}
           fill={false}

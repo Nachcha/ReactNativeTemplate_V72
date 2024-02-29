@@ -77,6 +77,8 @@ const LoginForm: React.FC<ILoginFormProps> = ({navigation}) => {
           onPress={() => {
             navigation.navigate('ForgotPassword');
           }}
+          testID="login-forgot-password-button"
+          accessibilityLabel="login-forgot-password-button"
         />
       </View>
       <ButtonPrimary

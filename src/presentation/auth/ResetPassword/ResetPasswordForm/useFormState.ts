@@ -58,11 +58,27 @@ const validateOnChange = (
 ): ValidatorFormType => {
   switch (field) {
     case 'password':
-      state.formData[field] = value;
+      state.formData[field] = value.replace(
+        /[^a-zA-Z0-9!@#$%^&*'"_:;,?.-]/g,
+        '',
+      );
+      state.formValidation[field].isValid =
+        (value.length >= 10 && value.length <= 20) || value === '';
+      state.formValidation[field].comment = state.formValidation[field].isValid
+        ? ''
+        : 'Password must be between 10 and 20';
       return state;
 
     case 'confirmPassword':
-      state.formData[field] = value;
+      state.formData[field] = value.replace(
+        /[^a-zA-Z0-9!@#$%^&*'"_:;,?.-]/g,
+        '',
+      );
+      state.formValidation[field].isValid =
+        (value.length >= 10 && value.length <= 20) || value === '';
+      state.formValidation[field].comment = state.formValidation[field].isValid
+        ? ''
+        : 'Password must be between 10 and 20';
       return state;
 
     default:

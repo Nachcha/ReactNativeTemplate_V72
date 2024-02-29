@@ -58,6 +58,8 @@ const SignupForm: React.FC<ISignupFormProps> = ({navigation}) => {
             color={Colors.senary}
           />
         }
+        testID="signup-username-input"
+        accessibilityLabel="signup-username-input"
       />
       <InputText
         label={t('email')}
@@ -77,6 +79,8 @@ const SignupForm: React.FC<ISignupFormProps> = ({navigation}) => {
             color={Colors.senary}
           />
         }
+        testID="signup-email-input"
+        accessibilityLabel="signup-email-input"
       />
       <InputText
         label={t('password')}
@@ -96,6 +100,8 @@ const SignupForm: React.FC<ISignupFormProps> = ({navigation}) => {
           />
         }
         secureTextEntry={formState.formValidation.password.isSecured}
+        testID="signup-password-input"
+        accessibilityLabel="signup-password-input"
       />
       <InputText
         label={t('confirm-password')}
@@ -119,6 +125,8 @@ const SignupForm: React.FC<ISignupFormProps> = ({navigation}) => {
           />
         }
         secureTextEntry={formState.formValidation.password.isSecured}
+        testID="signup-confirm-password-input"
+        accessibilityLabel="signup-confirm-password-input"
       />
       {!keyboardStatus && (
         <>
@@ -127,6 +135,8 @@ const SignupForm: React.FC<ISignupFormProps> = ({navigation}) => {
             label={t('signup')}
             fill={true}
             style={styles.buttonContainer}
+            testID="signup-signup-button"
+            accessibilityLabel="signup-signup-button"
           />
           <ButtonPrimary
             onPress={() => {
@@ -135,6 +145,8 @@ const SignupForm: React.FC<ISignupFormProps> = ({navigation}) => {
             label={t('login')}
             fill={false}
             style={styles.buttonContainer}
+            testID="signup-login-button"
+            accessibilityLabel="signup-login-button"
           />
         </>
       )}
